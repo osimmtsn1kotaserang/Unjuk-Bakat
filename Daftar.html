@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendaftaran Karya</title>
+
+  <!-- CSS utama (punya kamu) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- JavaScript utama -->
+  <script src="daftar.js" defer></script>
+</head>
+
+<body class="Contentpage gradient-bg">
+
+  <!-- NAVIGATION BAR -->
+  <nav class="nav">
+    <div class="logo">Pendaftaran Karya</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="Daftar.html" class="active">Daftar</a></li>
+      <li><a href="Karya.html">Karya</a></li>
+      <li><a href="Peraturan.html">Peraturan</a></li>
+      <li><a href="Kontak.html">Kontak</a></li>
+    </ul>
+    <button class="hamburger">☰</button>
+  </nav>
+
+  <!-- FORMULIR PENDAFTARAN -->
+  <div class="form-container fade-in">
+    <h1>Formulir Pendaftaran</h1>
+    <p>Isi data sesuai format. Kuota maksimal 25 kelompok.</p>
+
+    <!-- STATUS KUOTA -->
+    <p id="status"></p>
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- FORM -->
+    <form id="kuesioner">
+      
+      <label for="nama">Nama Kelompok / Proyek</label>
+      <input type="text" id="nama" name="nama" required />
+
+      <label for="ketua">Nama Ketua</label>
+      <input type="text" id="ketua" name="ketua" required />
+
+      <label for="anggota">Nama Anggota</label>
+      <textarea id="anggota" name="anggota" placeholder="Github 8Z, Web 7S" required></textarea>
+
+      <label for="kontak">Nomor Ketua Kelompok</label>
+      <input type="tel" id="kontak" name="kontak" required />
+
+      <label for="link">URL Backsound (opsional)</label>
+      <input type="url" id="link" name="link" placeholder="https://" />
+
+      <!-- TOMBOL KIRIM -->
+      <button type="submit" class="form-btn">Kirim Pendaftaran</button>
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Osim MTsN 1 Kota Serang | UNJUK BAKAT</p>
+  </footer>
+
+</body>
+</html>

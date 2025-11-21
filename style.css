@@ -1,0 +1,269 @@
+/* ======================================================
+   COMPLETE MODERN CSS — Blue ⇢ Purple Gradient Theme
+   - Glassmorphism
+   - Responsive / Mobile-first
+   - Accessible focus states
+   - Smooth micro-interactions & animations
+   - Form styles, bubble cards, peraturan (pre) compatibility
+   ====================================================== */
+
+/* ----------------------
+   FONTS
+   ---------------------- */
+@font-face{font-family:Lexend;src:url("font/Lexend-VariableFont_wght.ttf") format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:BungeeSpice;src:url("font/BungeeSpice-Regular.ttf") format('truetype');font-weight:400;font-style:normal;font-display:swap}
+:root{
+  --bg-start:#2575fc; /* blue */
+  --bg-end:#6a11cb;   /* purple */
+  --glass:rgba(255,255,255,0.10);
+  --card-bg:#ffffff;
+  --muted:#8a8a9a;
+  --accent-1:#6a11cb;
+  --accent-2:#2575fc;
+  --success-gradient:linear-gradient(90deg,#57cc99,#38a3a5);
+  --radius-lg:20px;
+  --radius-md:12px;
+  --shadow-1:0 8px 30px rgba(0,0,0,0.15);
+  --shadow-2:0 12px 40px rgba(0,0,0,0.18);
+}
+/* ----------------------
+   Body and NAVBAR
+   ---------------------- */
+body.gradient-bg {
+   background: linear-gradient(135deg, #6a11cb, #2575fc);
+   color: #fff;
+   min-height: 100vh;
+}
+.nav {
+   display: flex;
+   justify-content: space-between;
+   padding: 15px 30px;
+   background: rgba(255,255,255,0.15);
+   backdrop-filter: blur(6px);
+   border-radius: 0 0 12px 12px;
+}
+.nav a { color:white; text-decoration:none; margin:0 10px; }
+.logo { font-weight:700; }
+.hero { text-align:center; padding:60px 20px; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; padding:20px; }
+.card { background:white; color:#333; border-radius:16px; padding:20px; text-align:center; box-shadow:0 8px 20px rgba(0,0,0,0.1); }
+.card img { width:60px; margin-bottom:10px; }
+.btn { display:inline-block; padding:8px 16px; border-radius:20px; background: linear-gradient(135deg,#6a11cb,#2575fc); color:white; text-decoration:none; }
+.footer { text-align:center; padding:20px; color:white; }
+@media(max-width:600px){ .nav{flex-direction:column; align-items:center;} }
+/* ----------------------
+   GLOBAL RESET
+   ---------------------- */
+   *{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;}
+body{font-family:Lexend,system-ui,-apple-system,"Segoe UI",Roboto,'Helvetica Neue',Arial;line-height:1.45;color:#0b1220;background:linear-gradient(135deg,var(--bg-end),var(--bg-start));-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh;}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+
+/* ----------------------
+   ACCESSIBLE FOCUS
+   ---------------------- */
+:focus{outline:3px solid rgba(99,102,241,0.18);outline-offset:3px;border-radius:6px}
+
+/* ----------------------
+   LAYOUT HELPERS
+   ---------------------- */
+.container{width:94%;max-width:1200px;margin:0 auto}
+.row{display:flex;gap:20px;flex-wrap:wrap}
+.center{text-align:center}
+/* -----------------------
+   Design
+   ----------------------- */
+.footer {
+   text-align: center;
+   color: #fff;
+}
+.btn {
+   display:inline-block; 
+   padding:8px 16px; 
+   border-radius:20px; 
+   background: linear-gradient(135deg,#6a11cb,#2575fc); color:white; text-decoration:none;
+}
+/* ----------------------
+   NAVBAR / HEADER
+   ---------------------- */
+
+.nav{backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03));padding:14px 18px;border-radius:0 0 14px 14px;border:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;position:sticky;top:10px;margin:10px;z-index:40}
+.nav .logo{font-weight:800;color:#fff;font-size:1.15rem;letter-spacing:0.6px}
+.nav-links{display:flex;gap:12px;align-items:center;list-style:none}
+.nav-links a{padding:8px 12px;border-radius:10px;color:#fff;font-weight:600;transition:all .18s ease}
+.nav-links a:hover{background:rgba(255,255,255,0.06);transform:translateY(-3px)}
+
+/* mobile hamburger */
+.hamburger{display:none;width:40px;height:40px;border-radius:10px;align-items:center;justify-content:center;background:transparent;border:none;color:#fff}
+
+/* ----------------------
+   HERO
+   ---------------------- */
+.hero{padding:56px 16px 36px;text-align:center;color:white}
+.hero h1{font-size:2.6rem;margin-bottom:8px;letter-spacing:-0.6px}
+.hero p{margin:0 auto;max-width:760px;color:rgba(255,255,255,0.92);font-size:1.05rem}
+.hero .subtle{opacity:0.9}
+
+/* ----------------------
+   CARDS / BUBBLE UI (Improved Layout & Button Support)
+   ---------------------- */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+  margin:32px auto;
+  width:92%;
+}
+.card{
+  background:var(--card-bg);
+  color:#111;
+  padding:26px;
+  min-height:260px;
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-1);
+  text-align:center;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  transition:transform .28s ease,box-shadow .28s ease;
+}
+
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-2)}
+.card img.bubble-img{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  object-fit:contain;
+  border:4px solid #fff;
+  margin:0 auto 10px;
+}
+.card h3{font-size:1.15rem;margin:6px 0}
+.card p{color:var(--muted);flex:1;margin-bottom:14px}
+
+/* Button inside card */
+.card .button-link{
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:28px;
+  background:linear-gradient(135deg,var(--accent-2),var(--accent-1));
+  color:#fff;
+  font-weight:600;
+  text-decoration:none;
+  transition:transform .2s ease,opacity .2s ease;
+}
+.card .button-link:hover{transform:scale(1.05);opacity:0.9}
+
+/* Cards without button remain centered */
+.card.no-link p{margin-bottom:auto}
+
+/* ======================
+   PERATURAN (pre) - bubble + white border
+   ====================== */
+.peraturan-bubble-icon{width:100%;text-align:center;margin-top:20px;margin-bottom:-40px}
+.peraturan-bubble-icon .bubble-img{width:110px;height:110px;border-radius:50%;object-fit:contain;background:transparent;padding:12px;border:5px solid #fff;box-shadow:0 5px 14px rgba(0,0,0,0.25);position:relative;z-index:5}
+.peraturan{color:#fff;font-size:1rem;font-family:Lexend;background:linear-gradient(180deg,rgba(18,8,35,0.75),rgba(131,18,141,0.92));border-radius:22px;border:4px solid #fff;width:80%;max-width:900px;margin:40px auto;padding:26px;white-space:pre-wrap;line-height:1.45;box-shadow:0 6px 20px rgba(0,0,0,0.25);text-align:center}
+
+/* ----------------------
+   FORM STYLES (modern)
+   ---------------------- */
+.form-container{margin:36px auto;background:rgba(255,255,255,0.96);backdrop-filter:blur(6px);padding:26px;border-radius:18px;box-shadow:0 16px 40px rgba(2,6,23,0.16);width:94%;max-width:620px;color:#0b1220;transition:transform .18s ease}
+.form-container:hover{transform:translateY(-6px)}
+.form-container h1{font-size:1.6rem;margin-bottom:6px;color:#0b1220}
+.form-container p{color:var(--muted);margin-bottom:14px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-row .full{grid-column:1/-1}
+label{display:block;font-weight:600;color:#252525;font-size:0.95rem;margin-top:8px}
+input[type=text],input[type=tel],input[type=url],textarea,select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #e6e6e9;background:#fff;font-size:1rem;color:#111;transition:box-shadow .16s,border-color .16s}
+textarea{min-height:110px;resize:vertical}
+input:focus,textarea:focus,select:focus{box-shadow:0 6px 22px rgba(106,17,203,0.12);border-color:var(--accent-1);outline:none}
+.form-btn{display:inline-block;width:100%;padding:12px;border-radius:12px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));color:#fff;font-weight:700;border:none;cursor:pointer}
+.form-btn:hover{transform:scale(1.02)}
+#status{margin-top:12px;font-weight:700;text-align:center}
+.progress-bar{height:12px;width:100%;background:#f0f0f0;border-radius:12px;overflow:hidden;margin-top:10px}
+.progress{height:100%;width:0%;background:var(--success-gradient);transition:width .45s ease}
+
+/* ----------------------
+   NAV MOBILE / RESPONSIVE
+   ---------------------- */
+@media (max-width:900px){
+  .hero h1{font-size:2.2rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+}
+
+/* small phones */
+@media (max-width:600px){
+  .hero{padding:36px 12px}
+  .hero h1{font-size:1.8rem}
+  .cards{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+  .form-row{grid-template-columns:1fr}
+  .peraturan{width:92%;padding:18px}
+  .peraturan-bubble-icon{margin-bottom:-28px}
+  .container{width:96%}
+}
+
+/* VERY SMALL */
+@media (max-width:420px){
+  .card{padding:16px;border-radius:14px}
+  .card h3{font-size:1rem}
+  .hero p{font-size:0.95rem}
+}
+
+/* ----------------------
+   GALLERY / KARYA GRID
+   ---------------------- */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.karya{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(2,6,23,0.12)}
+.karya img{width:100%;height:180px;object-fit:cover}
+.karya .meta{padding:12px}
+
+/* ----------------------
+   UTILITIES
+   ---------------------- */
+.small{font-size:0.85rem;color:var(--muted)}
+.muted{color:var(--muted)}
+.center-children{display:flex;align-items:center;justify-content:center}
+
+/* ----------------------
+   PRINT FRIENDLY
+   ---------------------- */
+@media print{body{background:#fff;color:#000} .nav,.footer{display:none} .peraturan, .form-container{box-shadow:none;border:none}}
+
+/* ----------------------
+   MICRO ANIMATIONS
+   ---------------------- */
+.btn, .bubble-btn, .form-btn{transition:transform .18s ease,box-shadow .18s ease}
+.btn:active, .form-btn:active{transform:scale(.98)}
+
+/* ----------------------
+   LEGACY COMPAT (old class names preserved)
+   ---------------------- */
+.Homepage,.Contentpage{background:none;background-color:transparent}
+.navbar{width:100%}
+.navbar ul{display:flex;list-style:none;padding-left:0;gap:8px}
+.bubble-img{border:4px solid #fff}
+
+/* ---------------------
+   Progress Bar
+   --------------------- */
+.progress-bar{
+  height:14px;
+  width:100%;
+  background:#f0f0f4;
+  border-radius:12px;
+  overflow:hidden;
+  margin-top:10px;
+  box-shadow:inset 0 3px 6px rgba(0,0,0,0.08);
+}
+.progress{
+  height:100%;
+  width:0%;
+  background:var(--success-gradient);
+  transition:width .45s ease;
+}
+
+
+/* End of CSS */

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unjuk Bakat</title>
+  <link rel="icon" type="image/png" href="img/Osim.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body.gradient-bg {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      min-height: 100vh;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(6px);
+      border-radius: 0 0 12px 12px;
+    }
+    .nav a { color:white; text-decoration:none; margin:0 10px; }
+    .logo { font-weight:700; }
+    .hero { text-align:center; padding:60px 20px; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; padding:20px; }
+    .card { background:white; color:#333; border-radius:16px; padding:20px; text-align:center; box-shadow:0 8px 20px rgba(0,0,0,0.1); }
+    .card img { width:60px; margin-bottom:10px; }
+    .btn { display:inline-block; padding:8px 16px; border-radius:20px; background: linear-gradient(135deg,#6a11cb,#2575fc); color:white; text-decoration:none; }
+    .footer { text-align:center; padding:20px; color:white; }
+    @media(max-width:600px){ .nav{flex-direction:column; align-items:center;} }
+  </style>
+</head>
+<body class="gradient-bg">
+  <nav class="nav">
+    <div class="logo">Unjuk Bakat</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Daftar.html">Daftar</a></li>
+      <li><a href="Peraturan.html">Peraturan</a></li>
+      <li><a href="Karya.html">Karya</a></li>
+      <li><a href="Kontak.html">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <main class="hero">
+    <h1>Selamat Datang di Unjuk Bakat</h1>
+    <p>Wujudkan kreativitas dan bakat terbaikmu!</p>
+  </main>
+
+  <section class="cards">
+    <div class="card">
+      <img src="img/phone-solid-full.png" alt="Kontak" class="img"/>
+      <h3>Kontak</h3>
+      <p>Hubungi kami jika ada kendala.</p>
+      <a href="Kontak.html" class="btn">Kunjungi</a>
+    </div>
+
+    <div class="card">
+      <img src="img/palette-solid-full.png" alt="Karya" class="img"/>
+      <h3>Karya</h3>
+      <p>Lihat karya spektakuler siswa.</p>
+      <a href="Karya.html" class="btn">Kunjungi</a>
+    </div>
+
+    <div class="card">
+      <img src="img/bookmark-solid-full.png" alt="Daftar" class="img"/>
+      <h3>Pendaftaran</h3>
+      <p>Daftar disini!</p>
+      <a href="Daftar.html" class="btn">Kunjungi</a>
+    </div>
+
+    <div class="card">
+      <img src="img/list-solid-full.png" alt="Peraturan" class="img"/>
+      <h3>Peraturan</h3>
+      <p>Baca peraturan disini.</p>
+      <a href="Peraturan.html" class="btn">Kunjungi</a>
+    </div>
+  </section>
+  <footer class="footer">© 2025 Osim MTsN 1 Kota Serang | UNJUK BAKAT</footer>
+</body>
+</html>
